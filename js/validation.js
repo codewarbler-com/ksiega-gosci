@@ -41,7 +41,7 @@ function validateRegistrationForm(event) {
         showError('Nazwa użytkownika może zawierać tylko litery, cyfry i podkreślenie', 'username-error');
         isValid = false;
     }
-
+    // lubie samochody
     // ====================================
     // TODO DLA UCZNIA - ZADANIE 1
     // ====================================
