@@ -1,0 +1,35 @@
+# Ignoruj konfigurację IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignoruj pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Ignoruj logi
+*.log
+error_log
+
+# Ignoruj tymczasowe pliki
+*.tmp
+*.temp
+*.cache
+
+# Ignoruj pliki sesji PHP
+/tmp/
+/temp/
+
+# Ignoruj konfigurację lokalną (jeśli ktoś stworzy)
+config.local.php
+
+# Ignoruj rozwiązania (uczniowie powinni spróbować sami!)
+docs/ROZWIAZANIA.md
+
+# Ignoruj pliki związane z Claude AI
+.claude/
+.clinerules
+.claude.md
+CLAUDE.md
