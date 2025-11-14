@@ -80,10 +80,10 @@ INSERT INTO categories (name, description, color) VALUES
 -- HASŁO dla wszystkich: test123
 -- Hash wygenerowany przez password_hash('test123', PASSWORD_DEFAULT)
 INSERT INTO users (username, email, password_hash, full_name, role) VALUES
-('admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrator Systemu', 'admin'),
-('moderator', 'moderator@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Jan Moderator', 'moderator'),
-('jankowalski', 'jan@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Jan Kowalski', 'user'),
-('annanowak', 'anna@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Anna Nowak', 'user');
+('admin', 'admin@example.com', '$2y$10$Xl7bJgLr.MyFYqbvbkbJQuUGis/4ZrTTCCBbwPVNn3cC9mGKBYhu.', 'Administrator Systemu', 'admin'),
+('moderator', 'moderator@example.com', '$2y$10$Xl7bJgLr.MyFYqbvbkbJQuUGis/4ZrTTCCBbwPVNn3cC9mGKBYhu.', 'Jan Moderator', 'moderator'),
+('jankowalski', 'jan@example.com', '$2y$10$Xl7bJgLr.MyFYqbvbkbJQuUGis/4ZrTTCCBbwPVNn3cC9mGKBYhu.', 'Jan Kowalski', 'user'),
+('annanowak', 'anna@example.com', '$2y$10$Xl7bJgLr.MyFYqbvbkbJQuUGis/4ZrTTCCBbwPVNn3cC9mGKBYhu.', 'Anna Nowak', 'user');
 
 -- Dodanie przykładowych wpisów
 INSERT INTO entries (user_id, category_id, title, content, ip_address) VALUES
