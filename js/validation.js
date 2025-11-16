@@ -54,7 +54,11 @@ function validateRegistrationForm(event) {
 
     // TWÓJ KOD TUTAJ:
     if (email === '') {
-        // Dokończ walidację email...
+        showError('Email jest wymagany','email-error')
+        isValid = false
+    }else if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        showError('Niepoprawny format emaila','email-error')
+        isValid = false
     }
 
     // ====================================
@@ -81,7 +85,16 @@ function validateRegistrationForm(event) {
 
     // TWÓJ KOD TUTAJ:
     if (password === '') {
-        // Dokończ walidację hasła...
+       showError('Hasło jest wymagane','password-error')
+       isValid = false;
+    }else if(password.length < 6){
+        showError('Hasło musi miec przynajmiej 6 znakow','password-error')
+        isValid = false;
+    }else if(!/[A-Z]/.test(password)){
+        showError('Hasło musie mieć wielka litere','password-error')
+        isValid = false;
+    }else if(!/[0-9]/.test(password)){
+        showError('Hasło musi zawierać jakaś cyfrę','password-error')
     }
 
     // ====================================
