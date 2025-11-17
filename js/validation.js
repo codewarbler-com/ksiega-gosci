@@ -186,7 +186,22 @@ function validateEntryForm(event) {
 
     // TWÓJ KOD TUTAJ:
     if (title === '') {
-        // Dokończ walidację tytułu i treści...
+        showError('Tytuł jest wymagany','title-error');
+        isValid = false;
+    }else if(title.length <5){
+        showError('Tytuł musie miec min 5 znaków','title-error');
+        isValid = false;
+    }else if(title.length > 200){
+        showError('Tytuł może mieć maksymalnie 200 znaków','title-error');
+        isValid = false;
+    }
+
+    if(content === ''){
+        showError('Treśc jeść jest wymagana','content-error');
+        isValid = false;
+    }else if(content.length < 10){
+        showError('Treść musi miec minimum 10 znaków', 'content-error')
+        isValid = false;
     }
 
     if (isValid) {
