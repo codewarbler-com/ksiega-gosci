@@ -55,10 +55,14 @@ function validateRegistrationForm(event) {
     // TWÓJ KOD TUTAJ:
     if (email === '') {
         showError('Email jest wymagany','email-error')
-        isValid = false
-    }else if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        isValid = false;
+    }else if(email.length > 100){
+        showError('Email jest za długi','email-error')
+        isValid = false;
+    }
+    else if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
         showError('Niepoprawny format emaila','email-error')
-        isValid = false
+        isValid = false;
     }
 
     // ====================================
