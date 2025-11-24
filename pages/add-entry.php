@@ -86,16 +86,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ip_address = getUserIP();
 
             try {
-                // Przygotuj zapytanie INSERT
-                // $stmt = $db->prepare("INSERT INTO entries ...");
-                // $stmt->execute([...]);
+                $stmt = $db->prepare("
+                    INSERT INTO entries (user_id, category_id, title, content, ip_address)
+                    VALUES (?,?,?,?,?)
+                ");
 
-                // Jeśli sukces:
-                // setFlashMessage('...', 'success');
-                // redirect('../index.php');
+                $result = $stmt->execute([
+                    $user_id,
+                    $category_id,
+                    $title,
+                    $content,
+                    $ip_address
+                ]);
 
-                // TYMCZASOWO - usuń po implementacji:
-                $errors[] = 'ZADANIE DLA UCZNIA: Dokończ implementację dodawania wpisu (ZADANIE 6 w add-entry.php)';
+                if($result){
+                    setFlashMessage('Wpis został dodany pomyslnie', 'success');
+                    redirect('../index.php');
+                }else{
+                    $errors[]='Nie udało sie dodać wpisu.';
+                }
+
+                //$errors[] = 'ZADANIE DLA UCZNIA: Dokończ implementację dodawania wpisu (ZADANIE 6 w add-entry.php)';
 
             } catch (PDOException $e) {
                 if (DEBUG_MODE) {
