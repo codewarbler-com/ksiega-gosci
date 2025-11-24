@@ -42,10 +42,18 @@ function loadEntries(page = 1, categoryId = 0) {
 
     fetch(url)
         .then(response => {
-            // Sprawdź odpowiedź...
+            if(!response.ok){
+                throw new Error('Błąd HTTP: ' + response.status);
+            }
+            return response.json();
         })
         .then(data => {
-            // Przetwórz dane...
+            hideLoadingIndicator();
+            if (data.success){
+                displayEntries(data.entries);
+            }else{
+                alert('Błąd: ' + data.message);
+            }
         })
         .catch(error => {
             console.error('Błąd AJAX:', error);
